@@ -20,11 +20,9 @@ function addTask() {
     // Obtiene el valor del campo de entrada y lo elimina de espacios en blanco al principio y al final
     const taskText = taskInput.value.trim();
 
-    // Verifica si el campo de entrada está vacío
-    if (taskText === "") {
-        // Si está vacío, muestra una alerta al usuario y detiene la ejecución de la función
+    if (taskText === ""){
         alert("Por favor, ingrese una tarea válida.");
-        return;
+        return
     }
 
     // Crea un nuevo elemento de lista (<li>) en el documento
@@ -50,8 +48,12 @@ function addTask() {
 
     // Agrega el elemento <li> a la lista de tareas (taskList)
     taskList.appendChild(li);
+    clearTaskInput();
 
-    // Limpia el campo de entrada (borra el texto) y establece el foco en él para una nueva entrada
+}
+
+// Limpia el campo de entrada (borra el texto) y establece el foco en él para una nueva entrada
+function clearTaskInput() {
     taskInput.value = "";
     taskInput.focus();
 }
