@@ -64,6 +64,11 @@ function clearAllTasks() {
     for (let i = 0; i < tasks.length; i++) {
         taskList.removeChild(tasks[i]);
     }
+
+    // Con un forEach, sería:
+    // tasks.forEach(task => {
+    //     taskList.removeChild(task);
+    // });
 }
 
 
